@@ -11,6 +11,8 @@ export { default as Breadcrumb } from './Breadcrumb';
 export type { BreadcrumbProps, BreadcrumbItem } from './Breadcrumb/types';
 export { default as Button } from './Button';
 export type { ButtonProps, ButtonOwnProps } from './Button';
+export { default as Carousel } from './Carousel';
+export type { CarouselProps } from './Carousel/types';
 export { default as Card } from './Card';
 export type {
   CardProps,
