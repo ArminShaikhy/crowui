@@ -63,6 +63,8 @@ export { default as Switch } from './Form/Switch';
 export type { SwitchProps } from './Form/Switch';
 export { default as Textarea } from './Form/Textarea';
 export type { TextareaProps } from './Form/Textarea';
+export { default as Popconfirm } from './Popconfirm';
+export type { PopconfirmProps } from './Popconfirm';
 export { default as Pagination } from './Pagination';
 export type { PaginationProps } from './Pagination';
 export { default as ProgressBar } from './Progress/Bar';
