@@ -43,10 +43,12 @@ const meta = {
       };
   render?: (record: T, index: number) => ReactNode;
   sort?: {
-      active?: 'ascend' | 'descend';
-      onSort: (value: 'ascend' | 'descend') => void;
+      // clicking the sort icon cycles ascend -> descend -> null
+      active?: 'ascend' | 'descend' | null;
+      onSort: (value: 'ascend' | 'descend' | null) => void;
     };
-  key?: string; 
+  filter?: ReactNode; // optional column filter slot, e.g. a text input
+  key?: string;
   dataIndex?: string | string[]; (you should pass one of key or dataIndex)
 }`,
         },
@@ -334,4 +336,87 @@ export const LongTable: Story = {
     })),
     stickyTableHeader: true,
   },
+};
+
+const sortableData = [
+  { id: '1', title: 'موز', price: 120000 },
+  { id: '2', title: 'سیب', price: 80000 },
+  { id: '3', title: 'پرتقال', price: 95000 },
+  { id: '4', title: 'انگور', price: 210000 },
+  { id: '5', title: 'هندوانه', price: 60000 },
+];
+
+type SortableRowData = (typeof sortableData)[0];
+
+/**
+ * Clicking a sortable header's icon cycles `ascend` -> `descend` -> `null` (not sorted).
+ * The icon rotates with a CSS transition to reflect the current direction, and a
+ * simple text filter is rendered next to the "نام محصول" header via `column.filter`.
+ */
+const TableWithSortAndFilterExample: FC = () => {
+  const [sortState, setSortState] = useState<{
+    key: string;
+    direction: 'ascend' | 'descend' | null;
+  } | null>(null);
+  const [titleFilter, setTitleFilter] = useState('');
+
+  const filteredData = sortableData.filter((row) =>
+    row.title.toLowerCase().includes(titleFilter.trim().toLowerCase()),
+  );
+
+  const sortedData = [...filteredData].sort((a, b) => {
+    if (!sortState?.direction) return 0;
+
+    const result =
+      (a as SortableRowData)[sortState.key as keyof SortableRowData] >
+      (b as SortableRowData)[sortState.key as keyof SortableRowData]
+        ? 1
+        : -1;
+
+    return sortState.direction === 'ascend' ? result : -result;
+  });
+
+  const sortableColumns: ColumnsType<SortableRowData>[] = [
+    {
+      title: 'نام محصول',
+      key: 'title',
+      dataIndex: 'title',
+      sort: {
+        active: sortState?.key === 'title' ? sortState.direction : null,
+        onSort: (value) => setSortState(value ? { key: 'title', direction: value } : null),
+      },
+      filter: (
+        <input
+          type="text"
+          value={titleFilter}
+          onChange={(e) => setTitleFilter(e.target.value)}
+          placeholder="فیلتر نام..."
+          className="crow:font-p2-regular crow:w-24 crow:rounded-lg crow:border crow:border-solid crow:border-gray-200 crow:bg-surface crow:px-2 crow:py-1 crow:text-gray-700 crow:outline-none crow:focus:border-primary-500"
+        />
+      ),
+    },
+    {
+      title: 'قیمت',
+      key: 'price',
+      dataIndex: 'price',
+      sort: {
+        active: sortState?.key === 'price' ? sortState.direction : null,
+        onSort: (value) => setSortState(value ? { key: 'price', direction: value } : null),
+      },
+    },
+  ];
+
+  return (
+    <Table
+      data={sortedData}
+      columns={sortableColumns}
+      rowKey="id"
+      className="crow:w-[600px]"
+      layout="fixed"
+    />
+  );
+};
+
+export const SortableWithFilter: Story = {
+  render: () => <TableWithSortAndFilterExample />,
 };
