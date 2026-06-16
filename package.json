@@ -26,7 +26,8 @@
     "url": "https://github.com/ArminShaikhy/crowui/issues"
   },
   "files": [
-    "dist"
+    "dist",
+    "AGENTS.md"
   ],
   "sideEffects": [
     "**/*.css"
