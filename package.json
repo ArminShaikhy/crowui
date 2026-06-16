@@ -60,6 +60,11 @@
       "import": "./dist/Badge/index.mjs",
       "require": "./dist/Badge/index.cjs"
     },
+    "./Banner": {
+      "types": "./dist/Banner/index.d.ts",
+      "import": "./dist/Banner/index.mjs",
+      "require": "./dist/Banner/index.cjs"
+    },
     "./Breadcrumb": {
       "types": "./dist/Breadcrumb/index.d.ts",
       "import": "./dist/Breadcrumb/index.mjs",
