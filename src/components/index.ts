@@ -73,6 +73,8 @@ export type {
   SecondLevelSidebarItem,
   ThirdLevelSidebarItem,
 } from './Sidebar/types';
+export { default as List, ListItem } from './List';
+export type { ListProps, ListItemProps } from './List/types';
 export { default as Menu } from './Menu';
 export type { MenuProps, MenuItemProps } from './Menu/types';
 export { default as Modal } from './Modal';

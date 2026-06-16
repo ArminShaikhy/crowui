@@ -169,6 +169,11 @@
       "import": "./dist/Form/Timepicker/index.mjs",
       "require": "./dist/Form/Timepicker/index.cjs"
     },
+    "./List": {
+      "types": "./dist/List/index.d.ts",
+      "import": "./dist/List/index.mjs",
+      "require": "./dist/List/index.cjs"
+    },
     "./Menu": {
       "types": "./dist/Menu/index.d.ts",
       "import": "./dist/Menu/index.mjs",
