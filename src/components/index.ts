@@ -5,6 +5,8 @@ export type { PickerWrapperProps } from './Form/Wrappers/PickerWrapper/type';
 export { AccordionGroup, AccordionItem } from './Accordion';
 export { default as Alert } from './Alert';
 export type { AlertProps } from './Alert';
+export { default as Avatar, AvatarGroup } from './Avatar';
+export type { AvatarProps, AvatarGroupProps } from './Avatar';
 export { default as Badge } from './Badge';
 export type { BadgeProps } from './Badge';
 export { default as Breadcrumb } from './Breadcrumb';
