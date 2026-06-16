@@ -82,6 +82,36 @@
   }
 }
 
+.command-palette-backdrop-enter {
+  animation: command-palette-fade 150ms ease-out forwards;
+}
+.command-palette-backdrop-exit {
+  animation: command-palette-fade 150ms ease-in reverse forwards;
+}
+.command-palette-panel-enter {
+  animation: command-palette-fade-scale 150ms ease-out forwards;
+}
+.command-palette-panel-exit {
+  animation: command-palette-fade-scale 150ms ease-in reverse forwards;
+}
+
+@keyframes command-palette-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes command-palette-fade-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
 /* Banner: collapses its height while the inner content fades/slides out, so
    dismissal reads as a smooth animation rather than an instant unmount. */
 .banner-collapse {

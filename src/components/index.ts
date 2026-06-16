@@ -27,6 +27,8 @@ export type {
 } from './Card/types';
 export { default as Chip } from './Chip';
 export type { ChipProps } from './Chip';
+export { default as CommandPalette } from './CommandPalette';
+export type { CommandPaletteProps, CommandItem } from './CommandPalette';
 export { default as Collapse } from './Collapse';
 export type { CollapseProps } from './Collapse/types';
 export { default as Divider } from './Divider';

@@ -90,6 +90,10 @@
       "import": "./dist/Chip/index.mjs",
       "require": "./dist/Chip/index.cjs"
     },
+    "./CommandPalette": {
+      "types": "./dist/CommandPalette/index.d.ts",
+      "import": "./dist/CommandPalette/index.mjs",
+      "require": "./dist/CommandPalette/index.cjs"
     "./Collapse": {
       "types": "./dist/Collapse/index.d.ts",
       "import": "./dist/Collapse/index.mjs",
