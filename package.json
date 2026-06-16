@@ -80,6 +80,11 @@
       "import": "./dist/Card/index.mjs",
       "require": "./dist/Card/index.cjs"
     },
+    "./Carousel": {
+      "types": "./dist/Carousel/index.d.ts",
+      "import": "./dist/Carousel/index.mjs",
+      "require": "./dist/Carousel/index.cjs"
+    },
     "./Chip": {
       "types": "./dist/Chip/index.d.ts",
       "import": "./dist/Chip/index.mjs",
