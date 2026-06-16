@@ -75,6 +75,11 @@
       "import": "./dist/Chip/index.mjs",
       "require": "./dist/Chip/index.cjs"
     },
+    "./Collapse": {
+      "types": "./dist/Collapse/index.d.ts",
+      "import": "./dist/Collapse/index.mjs",
+      "require": "./dist/Collapse/index.cjs"
+    },
     "./Divider": {
       "types": "./dist/Divider/index.d.ts",
       "import": "./dist/Divider/index.mjs",
