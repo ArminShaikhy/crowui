@@ -26,9 +26,19 @@ interface ColumnsTypeBase<T> {
       };
   render?: (record: T, index: number) => ReactNode;
   sort?: {
-    active?: SortValues;
-    onSort: (value: SortValues) => void;
+    /** Current sort direction for this column. Pass `null`/omit for "not sorted". */
+    active?: SortValues | null;
+    /**
+     * Called with the next sort direction. Clicking the sort icon cycles
+     * `ascend` -> `descend` -> `null` (not sorted) -> `ascend` ...
+     */
+    onSort: (value: SortValues | null) => void;
   };
+  /**
+   * Optional column filter slot. Render any filter UI (e.g. a text input) here;
+   * the column itself stays presentation-only — filtering logic lives in the consumer.
+   */
+  filter?: ReactNode;
 }
 
 interface ColumnsTypeWithKey<T> {

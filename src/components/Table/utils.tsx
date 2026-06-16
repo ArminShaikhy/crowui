@@ -1,7 +1,14 @@
 import clsx from 'clsx';
-import type { ColumnsType, TableProps, UnknownRecord } from './types';
+import type { ColumnsType, SortValues, TableProps, UnknownRecord } from './types';
 import type { CheckboxProps } from '../Form/Checkbox';
 import Checkbox from '../Form/Checkbox';
+
+/** Cycles a column's sort state: ascend -> descend -> none (null) -> ascend ... */
+export function getNextSortValue(active: SortValues | null): SortValues | null {
+  if (active === 'ascend') return 'descend';
+  if (active === 'descend') return null;
+  return 'ascend';
+}
 
 export function getAlingmentClass(align: ColumnsType['align']) {
   switch (align) {

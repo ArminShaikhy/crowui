@@ -3,15 +3,15 @@
 import clsx from 'clsx';
 import type { FC } from 'react';
 import IconArrowDown2 from '@/src/icons/IconArrowDown2';
-import IconArrowUp2 from '@/src/icons/IconArrowUp2';
 import IconInfoCircleOutline from '@/src/icons/IconInfoCircleOutline';
 import { isArraysEqual } from '@/src/utils/isArraysEqual';
 import TabelCell from './Cell';
 import { useTableContext } from './context';
-import type { ColumnsType, SortValues, TableProps, UnknownRecord } from './types';
+import type { ColumnsType, TableProps, UnknownRecord } from './types';
 import {
   getAlingmentClass,
   getColumnKey,
+  getNextSortValue,
   isSelectionAvailable,
   renderRowSelectCheckbox,
 } from './utils';
@@ -27,15 +27,25 @@ const TH_CLASS =
   'crow:p-4 crow:pl-0 crow:text-gray-500 crow:bg-gray-50 crow:border-b crow:border-solid crow:border-gray-200';
 const DIVIDER_CLASS = 'crow:!h-8 crow:shrink-0 crow:mr-2';
 
-function renderSortButton(sortValue: SortValues, sort: Required<ColumnsType>['sort']) {
-  const SortIcon = sortValue === 'ascend' ? IconArrowUp2 : IconArrowDown2;
+function renderSortButton(sort: Required<ColumnsType>['sort'], columnTitle?: string) {
+  const active = sort.active ?? null;
 
   return (
-    <button onClick={() => sort.onSort(sortValue)}>
-      <SortIcon
+    <button
+      type="button"
+      onClick={() => sort.onSort(getNextSortValue(active))}
+      aria-label={columnTitle ? `Sort by ${columnTitle}` : 'Sort column'}
+      aria-sort={active === 'ascend' ? 'ascending' : active === 'descend' ? 'descending' : 'none'}
+      className="crow:flex crow:items-center crow:justify-center"
+    >
+      <IconArrowDown2
         width={ICON_SIZE}
         height={ICON_SIZE}
-        className={sort.active === sortValue ? 'crow:text-primary-500' : 'crow:text-gray-500'}
+        className={clsx('crow:transition-transform crow:duration-300 crow:ease-in-out', {
+          'crow:rotate-180 crow:text-primary-500': active === 'ascend',
+          'crow:rotate-0 crow:text-primary-500': active === 'descend',
+          'crow:rotate-0 crow:text-gray-500': active === null,
+        })}
       />
     </button>
   );
@@ -129,11 +139,10 @@ const THead: FC<THeadProps> = (props) => {
                 ) : (
                   getThContent(column.title)
                 )}
-                {typeof column.sort?.onSort === 'function' && (
-                  <div className="crow:flex crow:flex-col">
-                    {renderSortButton('ascend', column.sort)}
-                    {renderSortButton('descend', column.sort)}
-                  </div>
+                {typeof column.sort?.onSort === 'function' &&
+                  renderSortButton(column.sort, column.title)}
+                {column.filter && (
+                  <div className="crow:flex crow:items-center">{column.filter}</div>
                 )}
               </div>
               {index !== columns.length - 1 && (
