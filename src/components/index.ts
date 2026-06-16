@@ -102,6 +102,8 @@ export { default as Tooltip } from './Tooltip';
 export type { TooltipProps } from './Tooltip';
 export { default as ToastProvider, useToast } from './Toast';
 export type { ToastOptions, ToastPosition, ToastVariant, ToastItem } from './Toast';
+export { default as Tree, TreeNode } from './Tree';
+export type { TreeProps, TreeNodeProps } from './Tree/types';
 export { Skeleton, SkeletonText, SkeletonAvatar, SkeletonCard } from './Skeleton';
 export type { SkeletonProps } from './Skeleton';
 export { default as Spinner } from './Spinner';
