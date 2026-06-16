@@ -5,12 +5,18 @@ export type { PickerWrapperProps } from './Form/Wrappers/PickerWrapper/type';
 export { AccordionGroup, AccordionItem } from './Accordion';
 export { default as Alert } from './Alert';
 export type { AlertProps } from './Alert';
+export { default as Avatar, AvatarGroup } from './Avatar';
+export type { AvatarProps, AvatarGroupProps } from './Avatar';
 export { default as Badge } from './Badge';
 export type { BadgeProps } from './Badge';
+export { default as Banner } from './Banner';
+export type { BannerProps, BannerActionProps } from './Banner';
 export { default as Breadcrumb } from './Breadcrumb';
 export type { BreadcrumbProps, BreadcrumbItem } from './Breadcrumb/types';
 export { default as Button } from './Button';
 export type { ButtonProps, ButtonOwnProps } from './Button';
+export { default as Carousel } from './Carousel';
+export type { CarouselProps } from './Carousel/types';
 export { default as Card } from './Card';
 export type {
   CardProps,
@@ -23,9 +29,13 @@ export { default as Chip } from './Chip';
 export type { ChipProps } from './Chip';
 export { default as CommandPalette } from './CommandPalette';
 export type { CommandPaletteProps, CommandItem } from './CommandPalette';
+export { default as Collapse } from './Collapse';
+export type { CollapseProps } from './Collapse/types';
 export { default as Divider } from './Divider';
 export { default as Drawer } from './Drawer';
 export type { DrawerProps } from './Drawer';
+export { default as EmptyState } from './EmptyState';
+export type { EmptyStateProps } from './EmptyState';
 export { default as Checkbox } from './Form/Checkbox';
 export type { CheckboxProps } from './Form/Checkbox';
 export { default as Datepicker } from './Form/Datepicker';
@@ -60,6 +70,8 @@ export type { ProgressBarProps } from './Progress/Bar';
 export { default as ProgressDoughnut } from './Progress/Doughnut';
 export { default as Rate } from './Rate';
 export type { RateProps } from './Rate/types';
+export { default as SegmentedControl } from './SegmentedControl';
+export type { SegmentedControlProps, SegmentedControlOption } from './SegmentedControl/types';
 export { default as Sidebar } from './Sidebar';
 export type {
   SidebarProps,
@@ -67,6 +79,8 @@ export type {
   SecondLevelSidebarItem,
   ThirdLevelSidebarItem,
 } from './Sidebar/types';
+export { default as List, ListItem } from './List';
+export type { ListProps, ListItemProps } from './List/types';
 export { default as Menu } from './Menu';
 export type { MenuProps, MenuItemProps } from './Menu/types';
 export { default as Modal } from './Modal';
@@ -90,8 +104,12 @@ export { default as Tooltip } from './Tooltip';
 export type { TooltipProps } from './Tooltip';
 export { default as ToastProvider, useToast } from './Toast';
 export type { ToastOptions, ToastPosition, ToastVariant, ToastItem } from './Toast';
+export { default as Tree, TreeNode } from './Tree';
+export type { TreeProps, TreeNodeProps } from './Tree/types';
 export { Skeleton, SkeletonText, SkeletonAvatar, SkeletonCard } from './Skeleton';
 export type { SkeletonProps } from './Skeleton';
+export { default as Spinner } from './Spinner';
+export type { SpinnerProps } from './Spinner';
 export { useDebouncedCallback } from '../hooks/useDebouncedCallback';
 export { usePopover } from '../hooks/usePopover';
 export type { UsePopoverReturn, UsePopoverOptions } from '../hooks/usePopover';
