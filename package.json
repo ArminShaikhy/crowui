@@ -85,6 +85,11 @@
       "import": "./dist/Drawer/index.mjs",
       "require": "./dist/Drawer/index.cjs"
     },
+    "./EmptyState": {
+      "types": "./dist/EmptyState/index.d.ts",
+      "import": "./dist/EmptyState/index.mjs",
+      "require": "./dist/EmptyState/index.cjs"
+    },
     "./Form/": "./dist/Form/",
     "./Form/Wrappers/*": null,
     "./Form/Common/*": null,
@@ -201,6 +206,11 @@
       "types": "./dist/Slider/index.d.ts",
       "import": "./dist/Slider/index.mjs",
       "require": "./dist/Slider/index.cjs"
+    },
+    "./Spinner": {
+      "types": "./dist/Spinner/index.d.ts",
+      "import": "./dist/Spinner/index.mjs",
+      "require": "./dist/Spinner/index.cjs"
     },
     "./Stepper/": "./dist/Stepper/",
     "./Stepper/Horizontal/*": null,
