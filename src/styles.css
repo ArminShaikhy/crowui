@@ -81,3 +81,28 @@
     color: #f0f3ff;
   }
 }
+
+/* Banner: collapses its height while the inner content fades/slides out, so
+   dismissal reads as a smooth animation rather than an instant unmount. */
+.banner-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.3s ease-in-out,
+    opacity 0.2s ease-in-out;
+}
+.banner-collapse > * {
+  overflow: hidden;
+}
+
+@keyframes banner-fade-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
