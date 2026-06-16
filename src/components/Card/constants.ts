@@ -21,3 +21,12 @@ export const cardShadowClassnameMap: Record<CardShadow, string> = {
   md: 'crow:shadow-md',
   lg: 'crow:shadow-lg',
 };
+
+// Subtle hover lift: bump to the next shadow step on hover so cards read as
+// interactive without a layout shift. Skipped entirely for `shadow="none"`.
+export const cardShadowHoverClassnameMap: Record<CardShadow, string> = {
+  none: '',
+  sm: 'crow:transition-shadow crow:duration-300 crow:ease-in-out crow:hover:shadow-md',
+  md: 'crow:transition-shadow crow:duration-300 crow:ease-in-out crow:hover:shadow-lg',
+  lg: 'crow:transition-shadow crow:duration-300 crow:ease-in-out crow:hover:shadow-xl',
+};
