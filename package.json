@@ -50,6 +50,11 @@
       "import": "./dist/Alert/index.mjs",
       "require": "./dist/Alert/index.cjs"
     },
+    "./Avatar": {
+      "types": "./dist/Avatar/index.d.ts",
+      "import": "./dist/Avatar/index.mjs",
+      "require": "./dist/Avatar/index.cjs"
+    },
     "./Badge": {
       "types": "./dist/Badge/index.d.ts",
       "import": "./dist/Badge/index.mjs",
