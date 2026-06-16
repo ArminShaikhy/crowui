@@ -5,7 +5,7 @@
   "author": "armin",
   "license": "MIT",
   "type": "module",
-  "homepage": "https://github.com/armin/crow-ui",
+  "homepage": "https://github.com/ArminShaikhy/crowui",
   "keywords": [
     "crow-ui",
     "ui-kit",
@@ -20,10 +20,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/armin/crow-ui"
+    "url": "https://github.com/ArminShaikhy/crowui"
   },
   "bugs": {
-    "url": "https://github.com/armin/crow-ui/issues"
+    "url": "https://github.com/ArminShaikhy/crowui/issues"
   },
   "files": [
     "dist"
