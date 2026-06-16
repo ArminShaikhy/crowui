@@ -75,6 +75,11 @@
       "import": "./dist/Chip/index.mjs",
       "require": "./dist/Chip/index.cjs"
     },
+    "./CommandPalette": {
+      "types": "./dist/CommandPalette/index.d.ts",
+      "import": "./dist/CommandPalette/index.mjs",
+      "require": "./dist/CommandPalette/index.cjs"
+    },
     "./Divider": {
       "types": "./dist/Divider/index.d.ts",
       "import": "./dist/Divider/index.mjs",
