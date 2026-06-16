@@ -1,0 +1,200 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import React, { FC, useState } from 'react';
+import IconArrowLeftMd from '../../icons/IconArrowLeftMd';
+import Button from '../Button';
+import Select from '../Form/Select';
+import cities from '../Form/Select/cities.json';
+import Drawer, { DrawerProps } from './index';
+
+const meta = {
+  title: 'Components/Drawer',
+  component: Drawer,
+  parameters: {
+    docs: {
+      description: {
+        component: `### \n\`\`\`js\nimport Drawer from 'crow-ui/Drawer';\nOr\nimport { Drawer } from 'crow-ui';\n\`\`\``,
+      },
+    },
+  },
+  argTypes: {
+    open: {
+      control: { type: 'boolean', disable: true },
+    },
+    onClose: {
+      control: { type: 'object', disable: true },
+    },
+    children: {
+      control: { disable: true },
+      table: {
+        type: { summary: 'ReactNode' },
+      },
+    },
+    persist: {
+      control: { type: 'boolean' },
+      table: {
+        type: { summary: 'boolean' },
+      },
+    },
+    width: {
+      control: { type: 'number' },
+      table: {
+        type: { summary: 'number' },
+      },
+    },
+    position: {
+      control: { type: 'select' },
+      options: ['bottom', 'top', 'right', 'left', 'center'],
+      table: {
+        type: { summary: 'bottom, top, right, left, center' },
+        defaultValue: { summary: 'bottom' },
+      },
+    },
+    className: {
+      control: { type: 'text' },
+      description: 'modal card class',
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    maskClassName: {
+      control: { type: 'text' },
+      description: 'black screen class',
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    containerClassName: {
+      control: { type: 'text' },
+      description: 'dialog body container class',
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    padding: {
+      control: { type: 'number' },
+      table: { type: { summary: 'number' }, defaultValue: { summary: '8' } },
+    },
+    header: {
+      control: { type: 'object' },
+      table: {
+        type: {
+          summary: 'DrawerHeaderType',
+          detail:
+            '{\n title?: string;\n description?: string;\n haveCloseIcon?: boolean;\n actionElement?: ReactNode;\n containerClassName?: string;\n }',
+        },
+      },
+    },
+    footer: {
+      control: { type: 'object' },
+      table: {
+        type: {
+          summary: 'DrawerFooterType',
+          detail: '{\n element?: ReactNode;\n containerClassName?: string; \n}',
+        },
+      },
+    },
+    containerElement: {
+      control: { type: 'object' },
+      description:
+        "CAUTION: this will change the mask position to 'absolute' to fit in your container so it's not going to positioned relative to viewport.",
+      table: {
+        type: { summary: 'Element' },
+        defaultValue: { summary: 'document.body' },
+      },
+    },
+    havePopover: {
+      control: { type: 'boolean' },
+      table: {
+        type: { summary: 'boolean' },
+      },
+      description:
+        'If your drawer content has a popover, set this to true to avoid overflow hidden on the drawer body.',
+    },
+  },
+} satisfies Meta<typeof Drawer>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+const DrawerExample: FC<DrawerProps> = (props) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>open drawer</Button>
+      <Drawer
+        {...props}
+        open={open}
+        onClose={() => setOpen(false)}
+      >
+        {props.children}
+      </Drawer>
+    </>
+  );
+};
+
+export const Default: Story = {
+  args: {
+    open: false,
+    onClose: () => {},
+    header: {
+      title: 'عنوان',
+      description: 'متن توضیحات',
+      haveCloseIcon: true,
+      actionElement: (
+        <button>
+          <IconArrowLeftMd />
+        </button>
+      ),
+    },
+    footer: {
+      element: (
+        <div className="crow:flex crow:justify-end crow:gap-2">
+          <Button variant="secondary">اولویت دوم</Button>
+          <Button>اولویت اول</Button>
+        </div>
+      ),
+    },
+    children: (
+      <div className="crow:border crow:border-primary-500 crow:border-dashed crow:bg-gray-50 crow:text-gray-500 crow:rounded-lg crow:flex crow:items-center crow:justify-center crow:h-[200px] crow:w-[500px]">
+        Component
+      </div>
+    ),
+  },
+  render: (args) => <DrawerExample {...args} />,
+};
+
+const selectOptions = Object.values(cities ?? {})
+  .flat()
+  .map((item) => ({
+    label: item.title,
+    value: item.id,
+  }));
+
+export const WithPopover: Story = {
+  args: {
+    open: false,
+    onClose: () => {},
+    header: {
+      title: 'عنوان',
+      description: 'متن توضیحات',
+      haveCloseIcon: true,
+      actionElement: (
+        <button>
+          <IconArrowLeftMd />
+        </button>
+      ),
+    },
+    position: 'center',
+    havePopover: true,
+    children: (
+      <Select
+        optionCellClassName="crow:[direction:rtl]"
+        options={selectOptions}
+        value={301}
+        onChange={() => {}}
+      />
+    ),
+  },
+  render: (args) => <DrawerExample {...args} />,
+};

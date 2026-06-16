@@ -1,0 +1,302 @@
+{
+  "name": "crow-ui",
+  "version": "1.0.0",
+  "description": "A modern, accessible, and customizable React component library",
+  "author": "armin",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://github.com/armin/crow-ui",
+  "keywords": [
+    "crow-ui",
+    "ui-kit",
+    "component",
+    "components",
+    "design",
+    "framework",
+    "frontend",
+    "react",
+    "react-component",
+    "ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/armin/crow-ui"
+  },
+  "bugs": {
+    "url": "https://github.com/armin/crow-ui/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./Accordion": {
+      "types": "./dist/Accordion/index.d.ts",
+      "import": "./dist/Accordion/index.mjs",
+      "require": "./dist/Accordion/index.cjs"
+    },
+    "./Alert": {
+      "types": "./dist/Alert/index.d.ts",
+      "import": "./dist/Alert/index.mjs",
+      "require": "./dist/Alert/index.cjs"
+    },
+    "./Badge": {
+      "types": "./dist/Badge/index.d.ts",
+      "import": "./dist/Badge/index.mjs",
+      "require": "./dist/Badge/index.cjs"
+    },
+    "./Breadcrumb": {
+      "types": "./dist/Breadcrumb/index.d.ts",
+      "import": "./dist/Breadcrumb/index.mjs",
+      "require": "./dist/Breadcrumb/index.cjs"
+    },
+    "./Button": {
+      "types": "./dist/Button/index.d.ts",
+      "import": "./dist/Button/index.mjs",
+      "require": "./dist/Button/index.cjs"
+    },
+    "./Card": {
+      "types": "./dist/Card/index.d.ts",
+      "import": "./dist/Card/index.mjs",
+      "require": "./dist/Card/index.cjs"
+    },
+    "./Chip": {
+      "types": "./dist/Chip/index.d.ts",
+      "import": "./dist/Chip/index.mjs",
+      "require": "./dist/Chip/index.cjs"
+    },
+    "./Divider": {
+      "types": "./dist/Divider/index.d.ts",
+      "import": "./dist/Divider/index.mjs",
+      "require": "./dist/Divider/index.cjs"
+    },
+    "./Drawer": {
+      "types": "./dist/Drawer/index.d.ts",
+      "import": "./dist/Drawer/index.mjs",
+      "require": "./dist/Drawer/index.cjs"
+    },
+    "./Form/": "./dist/Form/",
+    "./Form/Wrappers/*": null,
+    "./Form/Common/*": null,
+    "./Form/Checkbox/*": null,
+    "./Form/Checkbox": {
+      "types": "./dist/Form/Checkbox/index.d.ts",
+      "import": "./dist/Form/Checkbox/index.mjs",
+      "require": "./dist/Form/Checkbox/index.cjs"
+    },
+    "./Form/Datepicker/*": null,
+    "./Form/Datepicker": {
+      "types": "./dist/Form/Datepicker/index.d.ts",
+      "import": "./dist/Form/Datepicker/index.mjs",
+      "require": "./dist/Form/Datepicker/index.cjs"
+    },
+    "./Form/FileUploader/*": null,
+    "./Form/FileUploader": {
+      "types": "./dist/Form/FileUploader/index.d.ts",
+      "import": "./dist/Form/FileUploader/index.mjs",
+      "require": "./dist/Form/FileUploader/index.cjs"
+    },
+    "./Form/Input/*": null,
+    "./Form/Input": {
+      "types": "./dist/Form/Input/index.d.ts",
+      "import": "./dist/Form/Input/index.mjs",
+      "require": "./dist/Form/Input/index.cjs"
+    },
+    "./Form/OtpInput/*": null,
+    "./Form/OtpInput": {
+      "types": "./dist/Form/OtpInput/index.d.ts",
+      "import": "./dist/Form/OtpInput/index.mjs",
+      "require": "./dist/Form/OtpInput/index.cjs"
+    },
+    "./Form/RadioButton/*": null,
+    "./Form/RadioButton": {
+      "types": "./dist/Form/RadioButton/index.d.ts",
+      "import": "./dist/Form/RadioButton/index.mjs",
+      "require": "./dist/Form/RadioButton/index.cjs"
+    },
+    "./Form/RangeInput/*": null,
+    "./Form/RangeInput": {
+      "types": "./dist/Form/RangeInput/index.d.ts",
+      "import": "./dist/Form/RangeInput/index.mjs",
+      "require": "./dist/Form/RangeInput/index.cjs"
+    },
+    "./Form/Select/*": null,
+    "./Form/Select": {
+      "types": "./dist/Form/Select/index.d.ts",
+      "import": "./dist/Form/Select/index.mjs",
+      "require": "./dist/Form/Select/index.cjs"
+    },
+    "./Form/Switch/*": null,
+    "./Form/Switch": {
+      "types": "./dist/Form/Switch/index.d.ts",
+      "import": "./dist/Form/Switch/index.mjs",
+      "require": "./dist/Form/Switch/index.cjs"
+    },
+    "./Form/Textarea/*": null,
+    "./Form/Textarea": {
+      "types": "./dist/Form/Textarea/index.d.ts",
+      "import": "./dist/Form/Textarea/index.mjs",
+      "require": "./dist/Form/Textarea/index.cjs"
+    },
+    "./Form/Timepicker/*": null,
+    "./Form/Timepicker": {
+      "types": "./dist/Form/Timepicker/index.d.ts",
+      "import": "./dist/Form/Timepicker/index.mjs",
+      "require": "./dist/Form/Timepicker/index.cjs"
+    },
+    "./Menu": {
+      "types": "./dist/Menu/index.d.ts",
+      "import": "./dist/Menu/index.mjs",
+      "require": "./dist/Menu/index.cjs"
+    },
+    "./Modal": {
+      "types": "./dist/Modal/index.d.ts",
+      "import": "./dist/Modal/index.mjs",
+      "require": "./dist/Modal/index.cjs"
+    },
+    "./Pagination": {
+      "types": "./dist/Pagination/index.d.ts",
+      "import": "./dist/Pagination/index.mjs",
+      "require": "./dist/Pagination/index.cjs"
+    },
+    "./Progress/": "./dist/Progress/",
+    "./Progress/Bar/*": null,
+    "./Progress/Bar": {
+      "types": "./dist/Progress/Bar/index.d.ts",
+      "import": "./dist/Progress/Bar/index.mjs",
+      "require": "./dist/Progress/Bar/index.cjs"
+    },
+    "./Progress/Doughnut/*": null,
+    "./Progress/Doughnut": {
+      "types": "./dist/Progress/Doughnut/index.d.ts",
+      "import": "./dist/Progress/Doughnut/index.mjs",
+      "require": "./dist/Progress/Doughnut/index.cjs"
+    },
+    "./Rate": {
+      "types": "./dist/Rate/index.d.ts",
+      "import": "./dist/Rate/index.mjs",
+      "require": "./dist/Rate/index.cjs"
+    },
+    "./Sidebar": {
+      "types": "./dist/Sidebar/index.d.ts",
+      "import": "./dist/Sidebar/index.mjs",
+      "require": "./dist/Sidebar/index.cjs"
+    },
+    "./Skeleton": {
+      "types": "./dist/Skeleton/index.d.ts",
+      "import": "./dist/Skeleton/index.mjs",
+      "require": "./dist/Skeleton/index.cjs"
+    },
+    "./Slider": {
+      "types": "./dist/Slider/index.d.ts",
+      "import": "./dist/Slider/index.mjs",
+      "require": "./dist/Slider/index.cjs"
+    },
+    "./Stepper/": "./dist/Stepper/",
+    "./Stepper/Horizontal/*": null,
+    "./Stepper/Horizontal": {
+      "types": "./dist/Stepper/Horizontal/index.d.ts",
+      "import": "./dist/Stepper/Horizontal/index.mjs",
+      "require": "./dist/Stepper/Horizontal/index.cjs"
+    },
+    "./Table": {
+      "types": "./dist/Table/index.d.ts",
+      "import": "./dist/Table/index.mjs",
+      "require": "./dist/Table/index.cjs"
+    },
+    "./Tabs": {
+      "types": "./dist/Tabs/index.d.ts",
+      "import": "./dist/Tabs/index.mjs",
+      "require": "./dist/Tabs/index.cjs"
+    },
+    "./Toast": {
+      "types": "./dist/Toast/index.d.ts",
+      "import": "./dist/Toast/index.mjs",
+      "require": "./dist/Toast/index.cjs"
+    },
+    "./Tooltip": {
+      "types": "./dist/Tooltip/index.d.ts",
+      "import": "./dist/Tooltip/index.mjs",
+      "require": "./dist/Tooltip/index.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "rm -rf dist && tsc && vite build && node scripts/generate-exports.js",
+    "build:story": "storybook build -o ./docs",
+    "start:story": "npx http-server docs",
+    "lint": "eslint --fix src/**/* --report-unused-disable-directives --max-warnings 0 --no-warn-ignored -f codeframe",
+    "format": "prettier src/**/* --write --ignore-unknown",
+    "prepublishOnly": "npm run build",
+    "prepare": "husky",
+    "transform-icons": "rm -rf src/icons/ && svgr assets/icons/ --config-file svgr.config.cjs"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@eslint/compat": "^1.2.8",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.24.0",
+    "@storybook/addon-actions": "^8.6.12",
+    "@storybook/addon-docs": "^8.6.12",
+    "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/blocks": "^8.6.12",
+    "@storybook/builder-vite": "^8.6.12",
+    "@storybook/react": "^8.6.12",
+    "@storybook/react-vite": "^8.6.12",
+    "@svgr/cli": "^8.1.0",
+    "@tailwindcss/vite": "^4.1.8",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.1",
+    "@typescript-eslint/eslint-plugin": "^8.29.0",
+    "@typescript-eslint/parser": "^8.29.0",
+    "@vitejs/plugin-react-swc": "^3.8.1",
+    "clsx": "^2.0.0",
+    "date-fns-jalali": "^4.1.0-0",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-formatter-codeframe": "^7.32.1",
+    "eslint-import-resolver-typescript": "^4.3.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest-dom": "^5.5.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "eslint-plugin-storybook": "^0.12.0",
+    "globals": "^16.0.0",
+    "husky": "^9.1.7",
+    "jsdom": "^26.0.0",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "rollup-preserve-directives": "^1.1.3",
+    "storybook": "^8.6.12",
+    "tailwindcss": "^4.1.8",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.3",
+    "vite-plugin-lib-inject-css": "^2.2.1"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
+  },
+  "lint-staged": {
+    "*.+(js|jsx|ts|tsx)": [
+      "yarn lint",
+      "yarn format"
+    ]
+  }
+}
