@@ -129,6 +129,7 @@ const Drawer: FC<DrawerProps> = (props) => {
     havePopover,
   } = props;
   const [show, setShow] = useState(false);
+  const [mounted, setMounted] = useState(open);
   const container = containerElement ?? (isBrowser() ? document?.body : null);
   const dialogRef = useRef<HTMLDivElement>(null);
   const titleId = useId();
@@ -150,6 +151,7 @@ const Drawer: FC<DrawerProps> = (props) => {
   function openDrawer() {
     if (openDrawerCount === 0) updateBodyClasses();
     openDrawerCount++;
+    setMounted(true);
     setTimeout(() => {
       setShow(true);
     }, ANIMATION_DURATION);
@@ -161,6 +163,7 @@ const Drawer: FC<DrawerProps> = (props) => {
     setTimeout(() => {
       openDrawerCount = Math.max(0, openDrawerCount - 1);
       updateBodyClasses();
+      setMounted(false);
       if (runOnClose) onClose();
     }, ANIMATION_DURATION);
   }
@@ -173,7 +176,7 @@ const Drawer: FC<DrawerProps> = (props) => {
         const focusable = dialogRef.current ? getFocusableElements(dialogRef.current) : [];
         focusable[0]?.focus();
       }, ANIMATION_DURATION + 50);
-    } else if (show) {
+    } else if (show || mounted) {
       closeDrawer(false);
       previousFocusRef.current?.focus();
     }
@@ -198,7 +201,7 @@ const Drawer: FC<DrawerProps> = (props) => {
     };
   }, []);
 
-  if (!open || !container) return;
+  if (!mounted || !container) return;
 
   const haveHeader = header
     ? Object.values(header).some((headerItem) => Boolean(headerItem))
@@ -206,7 +209,11 @@ const Drawer: FC<DrawerProps> = (props) => {
 
   const cardPosition: CSSProperties =
     position === 'center'
-      ? { top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }
+      ? {
+          top: '50%',
+          left: '50%',
+          transform: `translate(-50%, -50%) scale(${show ? 1 : 0.95})`,
+        }
       : {
           top: position !== 'bottom' ? (padding ?? 0) : 'unset',
           bottom: position !== 'top' ? (padding ?? 0) : 'unset',
@@ -217,8 +224,8 @@ const Drawer: FC<DrawerProps> = (props) => {
   return createPortal(
     <div
       className={clsx(
-        'crow:bg-black/40 crow:top-0 crow:left-0 crow:z-50 crow:opacity-0 crow:overflow-hidden crow:cursor-default crow:transition crow:ease-linear',
-        { 'crow:opacity-100': show, 'crow:w-full crow:h-full': open },
+        'crow:bg-black/40 crow:top-0 crow:left-0 crow:z-50 crow:opacity-0 crow:overflow-hidden crow:cursor-default crow:transition-opacity crow:duration-300 crow:ease-in-out',
+        { 'crow:opacity-100': show, 'crow:w-full crow:h-full': mounted },
         containerElement ? 'crow:absolute' : 'crow:fixed',
         maskClassName,
       )}
@@ -226,7 +233,7 @@ const Drawer: FC<DrawerProps> = (props) => {
     >
       <div
         className={clsx(
-          'crow:absolute crow:z-10 crow:opacity-0 crow:transition crow:duration-100 crow:flex crow:justify-center',
+          'crow:absolute crow:z-10 crow:opacity-0 crow:transition crow:duration-300 crow:ease-in-out crow:flex crow:justify-center',
           {
             'crow:opacity-100': show,
             'crow:translate-y-full': !show && position === 'bottom',

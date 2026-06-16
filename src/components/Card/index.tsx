@@ -4,6 +4,7 @@ import {
   cardBodyColorClassnameMap,
   cardBodySizeClassnameMap,
   cardShadowClassnameMap,
+  cardShadowHoverClassnameMap,
 } from './constants';
 import CardHeader from './Header';
 import type { CardProps } from './types';
@@ -30,6 +31,7 @@ const Card: FC<CardProps> = (props) => {
     cardBodyColorClassnameMap[color],
     cardBodySizeClassnameMap[size],
     shadow && cardShadowClassnameMap[shadow],
+    shadow && cardShadowHoverClassnameMap[shadow],
   );
 
   return (

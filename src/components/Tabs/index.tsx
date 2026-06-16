@@ -1,7 +1,15 @@
 'use client';
 
 import clsx from 'clsx';
-import { useCallback, type FC, type KeyboardEvent, type ReactNode } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type FC,
+  type KeyboardEvent,
+  type ReactNode,
+} from 'react';
 import Badge from '../Badge';
 import '@/src/styles.css';
 
@@ -52,6 +60,25 @@ const Tabs: FC<TabsProps> = (props) => {
 
   const enabledItems = items.filter((t) => !t.disabled);
 
+  // Measure the active underline-tab's position so the indicator can slide
+  // smoothly between any two tabs instead of each tab fading its own bar.
+  const tabRefs = useRef(new Map<ITabItem['key'], HTMLButtonElement>());
+  const [indicatorStyle, setIndicatorStyle] = useState<{
+    start: number;
+    size: number;
+  } | null>(null);
+
+  useEffect(() => {
+    if (variant !== 'underline') return;
+    const activeEl = tabRefs.current.get(activeKey);
+    if (!activeEl) return;
+    setIndicatorStyle(
+      isVertical
+        ? { start: activeEl.offsetTop, size: activeEl.offsetHeight }
+        : { start: activeEl.offsetLeft, size: activeEl.offsetWidth },
+    );
+  }, [activeKey, variant, isVertical, items]);
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLDivElement>) => {
       const currentIndex = enabledItems.findIndex((t) => t.key === activeKey);
@@ -77,6 +104,7 @@ const Tabs: FC<TabsProps> = (props) => {
 
   const containerClass = clsx(
     'crow:flex',
+    variant === 'underline' && 'crow:relative',
     isVertical ? 'crow:flex-col' : 'crow:flex-row',
     variant === 'underline' &&
       !isVertical &&
@@ -181,6 +209,10 @@ const Tabs: FC<TabsProps> = (props) => {
         return (
           <button
             key={tab.key}
+            ref={(el) => {
+              if (el) tabRefs.current.set(tab.key, el);
+              else tabRefs.current.delete(tab.key);
+            }}
             type="button"
             role="tab"
             aria-selected={isActive}
@@ -197,7 +229,7 @@ const Tabs: FC<TabsProps> = (props) => {
           >
             <div
               className={clsx(
-                'crow:flex crow:items-center crow:space-x-2 crow:px-3 crow:py-4 crow:transition',
+                'crow:flex crow:items-center crow:space-x-2 crow:px-3 crow:py-4 crow:transition-colors crow:duration-300 crow:ease-in-out',
                 {
                   'crow:text-primary-500': isActive,
                   'crow:text-gray-500 crow:group-hover:text-gray-600': !isActive,
@@ -209,7 +241,7 @@ const Tabs: FC<TabsProps> = (props) => {
             >
               {tab.icon ? (
                 <div
-                  className={clsx('crow:transition', {
+                  className={clsx('crow:transition-colors crow:duration-300 crow:ease-in-out', {
                     'crow:text-gray-400 crow:group-hover:text-gray-500': !isActive,
                   })}
                 >
@@ -230,18 +262,35 @@ const Tabs: FC<TabsProps> = (props) => {
                 />
               )}
             </div>
+            {/* Hover-only bar; the active state is owned by the single sliding
+                indicator below so it can animate smoothly between any two tabs. */}
             <div
-              className={clsx('crow:transition crow:rounded-t', {
+              className={clsx('crow:transition-opacity crow:duration-300 crow:rounded-t', {
                 'crow:w-full crow:h-1': !isVertical,
                 'crow:h-full crow:w-1 crow:rounded-l crow:rounded-tr-none': isVertical,
                 'crow:bg-gray-300 crow:opacity-0 crow:group-hover:opacity-100':
                   !isActive && !tab.disabled,
-                'crow:bg-primary-500': isActive,
               })}
             />
           </button>
         );
       })}
+      {variant === 'underline' && indicatorStyle && (
+        <div
+          aria-hidden="true"
+          className={clsx(
+            'crow:absolute crow:bg-primary-500 crow:rounded-t crow:transition-[transform,width,height] crow:duration-300 crow:ease-in-out',
+            isVertical
+              ? 'crow:left-0 crow:top-0 crow:w-1 crow:rounded-l crow:rounded-tr-none'
+              : 'crow:left-0 crow:bottom-0 crow:h-1',
+          )}
+          style={
+            isVertical
+              ? { transform: `translateY(${indicatorStyle.start}px)`, height: indicatorStyle.size }
+              : { transform: `translateX(${indicatorStyle.start}px)`, width: indicatorStyle.size }
+          }
+        />
+      )}
     </div>
   );
 };
