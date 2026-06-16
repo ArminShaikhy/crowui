@@ -11,6 +11,7 @@ import SidebarLogoImage from './LogoImage';
 import SidebarProfile from './Profile';
 import SidebarToggleButton from './ToggleButton';
 import type { SidebarProps, SidebarPropsWithoutHideOnClose } from './types';
+import { sidebarVariantStyle } from './variants';
 import Button from '../Button';
 import Divider from '../Divider';
 
@@ -27,6 +28,8 @@ const Sidebar: FC<SidebarProps> = (props) => {
     onLogout,
     showMask,
     hideOnClose,
+    variant = 'filled',
+    position = 'right',
   } = props;
 
   const openOnHover = (props as SidebarPropsWithoutHideOnClose).openOnHover;
@@ -37,13 +40,13 @@ const Sidebar: FC<SidebarProps> = (props) => {
     if (hideOnClose || !isBrowser()) return;
 
     const documentElement = document?.documentElement;
-    const paddingRightClass = 'crow:pr-[80px]';
-    documentElement.classList.add(paddingRightClass);
+    const paddingClass = position === 'left' ? 'crow:pl-[80px]' : 'crow:pr-[80px]';
+    documentElement.classList.add(paddingClass);
 
     return () => {
-      documentElement.classList.remove(paddingRightClass);
+      documentElement.classList.remove(paddingClass);
     };
-  }, [hideOnClose]);
+  }, [hideOnClose, position]);
 
   useEffect(() => {
     if (!showMask || !isBrowser()) return;
@@ -78,7 +81,9 @@ const Sidebar: FC<SidebarProps> = (props) => {
         <div
           className={clsx(
             className,
-            'crow:flex crow:flex-col crow:fixed crow:top-0 crow:right-0 crow:bg-white crow:shadow-md crow:h-full crow:p-4 crow:pt-6 crow:transition-[width,max-width,opacity]',
+            'crow:flex crow:flex-col crow:fixed crow:top-0 crow:h-full crow:p-4 crow:pt-6 crow:transition-[width,max-width,opacity]',
+            position === 'left' ? 'crow:left-0' : 'crow:right-0',
+            sidebarVariantStyle[variant],
             {
               'crow:w-[280px] crow:max-w-full': isOpen,
               'crow:w-[80px] crow:max-w-[80px]': !isOpen && !hideOnClose,

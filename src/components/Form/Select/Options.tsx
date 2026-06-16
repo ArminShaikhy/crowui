@@ -128,7 +128,7 @@ const Options = <T,>(props: SelectProps<T>) => {
           ref={searchRef}
           id="search-input"
           wrapperClassName={clsx(
-            'crow:sticky crow:top-0 crow:pt-3 crow:right-0 crow:bg-white crow:z-10 crow:px-3',
+            'crow:sticky crow:top-0 crow:pt-3 crow:right-0 crow:bg-surface crow:z-10 crow:px-3',
             beforeOptions ? 'crow:pb-2' : 'crow:pb-3',
             inputSearchable?.wrapperClassName,
           )}

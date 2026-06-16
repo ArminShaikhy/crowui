@@ -107,6 +107,27 @@
   --crow-color-flamingo-700: 167 37 91;
   --crow-color-flamingo-800: 125 28 69;
   --crow-color-flamingo-900: 83 19 46;
+
+  /* Semantic surface token: replaces literal `bg-white` so chrome surfaces
+     (cards, dropdowns, menus, sidebars, tabs, light tooltips) can invert in
+     dark mode. Borders/text already flip via the gray palette vars above. */
+  --crow-surface-default: 255 255 255;
+
+  /* Radius scale, overridable independently of Tailwind's own defaults. */
+  --crow-radius-sm: 6px;
+  --crow-radius-md: 8px;
+  --crow-radius-lg: 12px;
+  --crow-radius-xl: 16px;
+  --crow-radius-2xl: 20px;
+  --crow-radius-full: 9999px;
+
+  /* Shadow scale, as vars so it's overridable (was previously hardcoded
+     literals directly in the @theme inline block below). */
+  --crow-shadow-xs: 0px 4px 8px 0px rgba(0, 0, 0, 0.03);
+  --crow-shadow-sm: 0px 6px 12px 0px rgba(0, 0, 0, 0.03);
+  --crow-shadow-md: 0px 9px 20px 0px rgba(0, 0, 0, 0.05);
+  --crow-shadow-lg: 0px 13px 36px 0px rgba(0, 0, 0, 0.06);
+  --crow-shadow-xl: 0px 20px 56px 0px rgba(0, 0, 0, 0.06);
 }
 
 @theme inline {
@@ -210,10 +231,20 @@
   --color-flamingo-800: rgb(var(--crow-color-flamingo-800));
   --color-flamingo-900: rgb(var(--crow-color-flamingo-900));
 
+  --color-surface: rgb(var(--crow-surface-default));
+
+  /* Radius */
+  --radius-sm: var(--crow-radius-sm);
+  --radius-md: var(--crow-radius-md);
+  --radius-lg: var(--crow-radius-lg);
+  --radius-xl: var(--crow-radius-xl);
+  --radius-2xl: var(--crow-radius-2xl);
+  --radius-full: var(--crow-radius-full);
+
   /* Shadows */
-  --shadow-xs: 0px 4px 8px 0px rgba(0, 0, 0, 0.03);
-  --shadow-sm: 0px 6px 12px 0px rgba(0, 0, 0, 0.03);
-  --shadow-md: 0px 9px 20px 0px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0px 13px 36px 0px rgba(0, 0, 0, 0.06);
-  --shadow-xl: 0px 20px 56px 0px rgba(0, 0, 0, 0.06);
+  --shadow-xs: var(--crow-shadow-xs);
+  --shadow-sm: var(--crow-shadow-sm);
+  --shadow-md: var(--crow-shadow-md);
+  --shadow-lg: var(--crow-shadow-lg);
+  --shadow-xl: var(--crow-shadow-xl);
 }

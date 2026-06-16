@@ -63,8 +63,8 @@ const THEME_CLASS: Record<
     tail: 'crow:bg-gray-700 crow:border-gray-300',
   },
   light: {
-    container: 'crow:bg-white crow:text-gray-800 crow:border-gray-200 crow:shadow-lg',
-    tail: 'crow:bg-white crow:border-gray-200',
+    container: 'crow:bg-surface crow:text-gray-800 crow:border-gray-200 crow:shadow-lg',
+    tail: 'crow:bg-surface crow:border-gray-200',
   },
 };
 

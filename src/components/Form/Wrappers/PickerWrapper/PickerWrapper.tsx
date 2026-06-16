@@ -126,7 +126,7 @@ const PickerWrapper: FC<PropsWithChildren<PickerWrapperProps>> = (props) => {
               <div
                 ref={popperRef}
                 className={clsx(
-                  'crow:absolute crow:min-w-[300px] crow:overflow-y-auto crow:overflow-x-hidden crow:shadow-lg crow:w-full crow:max-h-[360px] crow:transition-all crow:bg-white crow:z-50 crow:rounded-lg crow:border crow:border-solid crow:border-gray-200 crow:pb-3',
+                  'crow:absolute crow:min-w-[300px] crow:overflow-y-auto crow:overflow-x-hidden crow:shadow-lg crow:w-full crow:max-h-[360px] crow:transition-all crow:bg-surface crow:z-50 crow:rounded-lg crow:border crow:border-solid crow:border-gray-200 crow:pb-3',
                   DURATION_CLASS,
                   isShowWrapper
                     ? 'crow:opacity-100'

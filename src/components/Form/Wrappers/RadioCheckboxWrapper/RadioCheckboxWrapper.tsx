@@ -54,7 +54,7 @@ const RadioCheckboxWrapper: FC<RadioCheckboxWrapperProps> = (props) => {
       className={clsx(
         'crow:flex crow:w-fit crow:justify-between crow:items-center crow:group crow:has-[:disabled]:opacity-40 crow:has-[:disabled]:cursor-not-allowed crow:transition',
         {
-          'crow:p-3 crow:border crow:w-full crow:border-solid crow:rounded-xl crow:bg-white crow:has-[:checked]:bg-primary-50':
+          'crow:p-3 crow:border crow:w-full crow:border-solid crow:rounded-xl crow:bg-surface crow:has-[:checked]:bg-primary-50':
             variant === 'bordered',
           'crow:has-[:checked]:border-primary-500 crow:border-gray-200 crow:hover:ring-4 crow:hover:ring-gray-100 has-[:focus]:ring crow:has-[:focus]:ring-primary-300 crow:has-[:focus]:ring-offset-1 crow:has-[:focus]:ring-offset-white':
             variant === 'bordered' && !showError,

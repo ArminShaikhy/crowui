@@ -66,6 +66,12 @@ interface SidebarPropsBase {
   hideOnClose?: boolean;
   /** Shows a backdrop overlay when the sidebar is open (useful on mobile). @default false */
   showMask?: boolean;
+  /** Visual style of the sidebar panel. @default 'filled' */
+  variant?: 'filled' | 'bordered' | 'ghost';
+  /** Which edge of the viewport the sidebar is anchored to. @default 'right' */
+  position?: 'left' | 'right';
+  /** Controls the spacing/height density of navigation items. @default 'comfortable' */
+  itemSize?: 'compact' | 'comfortable';
 }
 
 export interface SidebarPropsWithHideOnClose {

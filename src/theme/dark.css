@@ -1,0 +1,107 @@
+/**
+ * Dark-mode overrides. Applied when a `.dark` class is present on an
+ * ancestor element (see @custom-variant dark in styles.css). Toggle it
+ * manually or via the ThemeProvider component.
+ */
+.dark {
+  --crow-surface-default: 30 41 59;
+  /* primary */
+  --crow-color-primary-50: 4 13 48;
+  --crow-color-primary-100: 10 30 95;
+  --crow-color-primary-200: 16 44 143;
+  --crow-color-primary-300: 21 59 191;
+  --crow-color-primary-400: 40 82 228;
+  --crow-color-primary-500: 76 110 229;
+  --crow-color-primary-600: 117 144 235;
+  --crow-color-primary-700: 158 176 240;
+  --crow-color-primary-800: 200 211 247;
+  --crow-color-primary-900: 240 243 255;
+  /* secondary */
+  --crow-color-secondary-50: 0 62 63;
+  --crow-color-secondary-100: 0 93 94;
+  --crow-color-secondary-200: 0 124 125;
+  --crow-color-secondary-300: 0 155 157;
+  --crow-color-secondary-400: 0 186 188;
+  --crow-color-secondary-500: 124 203 207;
+  --crow-color-secondary-600: 158 214 217;
+  --crow-color-secondary-700: 198 231 231;
+  --crow-color-secondary-800: 226 243 243;
+  --crow-color-secondary-900: 245 250 250;
+  /* success */
+  --crow-color-success-50: 6 78 60;
+  --crow-color-success-100: 6 95 73;
+  --crow-color-success-200: 4 120 91;
+  --crow-color-success-300: 5 150 114;
+  --crow-color-success-400: 16 185 143;
+  --crow-color-success-500: 52 211 171;
+  --crow-color-success-600: 110 231 201;
+  --crow-color-success-700: 167 243 224;
+  --crow-color-success-800: 209 250 240;
+  --crow-color-success-900: 236 253 249;
+  /* warning */
+  --crow-color-warning-50: 54 39 0;
+  --crow-color-warning-100: 108 78 2;
+  --crow-color-warning-200: 162 119 6;
+  --crow-color-warning-300: 216 158 13;
+  --crow-color-warning-400: 253 187 19;
+  --crow-color-warning-500: 253 199 63;
+  --crow-color-warning-600: 254 212 107;
+  --crow-color-warning-700: 254 222 142;
+  --crow-color-warning-800: 254 233 178;
+  --crow-color-warning-900: 255 246 224;
+  /* error */
+  --crow-color-error-50: 71 0 5;
+  --crow-color-error-100: 87 0 6;
+  --crow-color-error-200: 117 0 8;
+  --crow-color-error-300: 167 5 16;
+  --crow-color-error-400: 213 28 41;
+  --crow-color-error-500: 219 87 96;
+  --crow-color-error-600: 227 120 127;
+  --crow-color-error-700: 237 161 166;
+  --crow-color-error-800: 250 209 212;
+  --crow-color-error-900: 255 235 236;
+  /* gray */
+  --crow-color-gray-50: 15 23 42;
+  --crow-color-gray-100: 30 41 59;
+  --crow-color-gray-200: 51 65 85;
+  --crow-color-gray-300: 71 85 105;
+  --crow-color-gray-400: 100 116 139;
+  --crow-color-gray-500: 148 163 184;
+  --crow-color-gray-600: 203 213 225;
+  --crow-color-gray-700: 226 232 240;
+  --crow-color-gray-800: 241 245 249;
+  --crow-color-gray-900: 248 250 252;
+  /* sky */
+  --crow-color-sky-50: 20 61 85;
+  --crow-color-sky-100: 31 92 128;
+  --crow-color-sky-200: 41 123 170;
+  --crow-color-sky-300: 51 153 212;
+  --crow-color-sky-400: 61 184 255;
+  --crow-color-sky-500: 93 196 255;
+  --crow-color-sky-600: 126 208 255;
+  --crow-color-sky-700: 158 219 255;
+  --crow-color-sky-800: 190 231 255;
+  --crow-color-sky-900: 235 248 255;
+  /* violet */
+  --crow-color-violet-50: 47 12 82;
+  --crow-color-violet-100: 71 19 123;
+  --crow-color-violet-200: 118 31 205;
+  --crow-color-violet-300: 118 31 205;
+  --crow-color-violet-400: 142 37 246;
+  --crow-color-violet-500: 161 73 247;
+  --crow-color-violet-600: 180 110 249;
+  --crow-color-violet-700: 198 146 250;
+  --crow-color-violet-800: 217 182 252;
+  --crow-color-violet-900: 243 233 253;
+  /* flamingo */
+  --crow-color-flamingo-50: 83 19 46;
+  --crow-color-flamingo-100: 125 28 69;
+  --crow-color-flamingo-200: 167 37 91;
+  --crow-color-flamingo-300: 208 47 114;
+  --crow-color-flamingo-400: 250 56 137;
+  --crow-color-flamingo-500: 251 89 157;
+  --crow-color-flamingo-600: 252 122 176;
+  --crow-color-flamingo-700: 252 155 196;
+  --crow-color-flamingo-800: 253 189 216;
+  --crow-color-flamingo-900: 254 234 242;
+}

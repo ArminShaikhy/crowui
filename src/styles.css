@@ -1,6 +1,8 @@
 @import 'tailwindcss' prefix(crow);
 @import './theme/index.css';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   /* Chrome, Safari, Edge, Opera */
   input::-webkit-outer-spin-button,

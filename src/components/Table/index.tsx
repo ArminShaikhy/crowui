@@ -27,7 +27,7 @@ function Table<T extends UnknownRecord>(props: Readonly<TableProps<T>>) {
   return (
     <div
       className={clsx(
-        'crow:relative crow:bg-white crow:border crow:border-gray-200 crow:border-solid crow:rounded-2xl',
+        'crow:relative crow:bg-surface crow:border crow:border-gray-200 crow:border-solid crow:rounded-2xl',
         wrapperClassName,
       )}
     >
