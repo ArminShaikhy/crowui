@@ -202,6 +202,11 @@
       "import": "./dist/Rate/index.mjs",
       "require": "./dist/Rate/index.cjs"
     },
+    "./SegmentedControl": {
+      "types": "./dist/SegmentedControl/index.d.ts",
+      "import": "./dist/SegmentedControl/index.mjs",
+      "require": "./dist/SegmentedControl/index.cjs"
+    },
     "./Sidebar": {
       "types": "./dist/Sidebar/index.d.ts",
       "import": "./dist/Sidebar/index.mjs",

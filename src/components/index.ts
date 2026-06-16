@@ -64,6 +64,8 @@ export type { ProgressBarProps } from './Progress/Bar';
 export { default as ProgressDoughnut } from './Progress/Doughnut';
 export { default as Rate } from './Rate';
 export type { RateProps } from './Rate/types';
+export { default as SegmentedControl } from './SegmentedControl';
+export type { SegmentedControlProps, SegmentedControlOption } from './SegmentedControl/types';
 export { default as Sidebar } from './Sidebar';
 export type {
   SidebarProps,
