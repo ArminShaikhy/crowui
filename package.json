@@ -169,6 +169,11 @@
       "import": "./dist/Pagination/index.mjs",
       "require": "./dist/Pagination/index.cjs"
     },
+    "./Popconfirm": {
+      "types": "./dist/Popconfirm/index.d.ts",
+      "import": "./dist/Popconfirm/index.mjs",
+      "require": "./dist/Popconfirm/index.cjs"
+    },
     "./Progress/": "./dist/Progress/",
     "./Progress/Bar/*": null,
     "./Progress/Bar": {
