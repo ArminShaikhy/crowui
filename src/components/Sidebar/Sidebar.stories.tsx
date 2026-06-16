@@ -84,8 +84,8 @@ const defaultArgs: SidebarProps = {
   isOpen: true,
   setIsOpen: () => {},
   logo: {
-    open: 'https://dgshahr.com/assets/svg/logotype.svg',
-    close: 'https://dgshahr.com/assets/svg/logo.svg',
+    open: 'https://placehold.co/120x32?text=Logo',
+    close: 'https://placehold.co/32x32?text=L',
     loading: 'eager',
   },
   userProfile: {

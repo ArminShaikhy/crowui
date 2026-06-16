@@ -3,3 +3,5 @@ dist
 .github
 .idea
 .DS_Store
+docs
+*.timestamp-*.mjs
