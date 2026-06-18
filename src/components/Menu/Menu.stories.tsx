@@ -51,6 +51,12 @@ const meta: Meta<typeof Menu> = {
       ],
       description: 'Initial position of the menu (will auto-flip if needed)',
     },
+    panelVariant: {
+      control: 'select',
+      options: ['default', 'minimal'],
+      description: 'Visual style of the dropdown panel',
+      table: { defaultValue: { summary: 'default' } },
+    },
   },
 };
 
@@ -98,7 +104,7 @@ export const Default: Story = {
         <Menu.Item
           icon={<IconLogout className="crow:w-6 crow:h-6" />}
           onClick={() => {}}
-          className="crow:text-red-500 crow:bg-red-50 crow:hover:bg-red-100 crow:hover:text-red-500"
+          color="danger"
         >
           خروج
         </Menu.Item>
@@ -145,7 +151,7 @@ export const WithSections: Story = {
         <Menu.Item
           icon={<IconLogout className="crow:w-6 crow:h-6" />}
           onClick={() => {}}
-          className="crow:text-red-500 crow:bg-red-50 crow:hover:bg-red-100 crow:hover:text-red-500"
+          color="danger"
         >
           خروج
         </Menu.Item>
@@ -183,7 +189,7 @@ export const WithDisabledItems: Story = {
         <Menu.Item
           icon={<IconLogout className="crow:w-6 crow:h-6" />}
           onClick={() => {}}
-          className="crow:text-red-500 crow:bg-red-50 crow:hover:bg-red-100 crow:hover:text-red-500"
+          color="danger"
         >
           خروج
         </Menu.Item>
@@ -305,6 +311,98 @@ export const LongContent: Story = {
         >
           عملیات پاکسازی و نگهداری
         </Menu.Item>
+      </>
+    ),
+  },
+};
+
+export const PanelVariants: Story = {
+  args: {
+    panelVariant: 'minimal',
+    trigger: (toggle, ref) => renderTrigger('پنل مینیمال', toggle, ref),
+    children: (
+      <>
+        {renderTitle('تنظیمات حساب کاربری')}
+        <Menu.Item
+          icon={<IconUser className="crow:w-6 crow:h-6" />}
+          onClick={() => {}}
+        >
+          پروفایل
+        </Menu.Item>
+        <Menu.Item
+          icon={<IconSetting className="crow:w-6 crow:h-6" />}
+          onClick={() => {}}
+        >
+          تنظیمات
+        </Menu.Item>
+        <Menu.Item
+          icon={<IconLogout className="crow:w-6 crow:h-6" />}
+          onClick={() => {}}
+          color="danger"
+        >
+          خروج
+        </Menu.Item>
+      </>
+    ),
+  },
+};
+
+export const Sizes: Story = {
+  args: {
+    trigger: (toggle, ref) => renderTrigger('اندازه آیتم‌ها', toggle, ref),
+    children: (
+      <>
+        {renderTitle('کامپکت')}
+        <Menu.Item
+          icon={<IconUser className="crow:w-4 crow:h-4" />}
+          onClick={() => {}}
+          size="compact"
+        >
+          پروفایل
+        </Menu.Item>
+        <Menu.Item
+          icon={<IconSetting className="crow:w-4 crow:h-4" />}
+          onClick={() => {}}
+          size="compact"
+        >
+          تنظیمات
+        </Menu.Item>
+        <Divider
+          type="horizontal"
+          className="crow:-mx-4 crow:!w-auto"
+        />
+        {renderTitle('معمولی')}
+        <Menu.Item
+          icon={<IconUser className="crow:w-6 crow:h-6" />}
+          onClick={() => {}}
+        >
+          پروفایل
+        </Menu.Item>
+        <Menu.Item
+          icon={<IconSetting className="crow:w-6 crow:h-6" />}
+          onClick={() => {}}
+        >
+          تنظیمات
+        </Menu.Item>
+      </>
+    ),
+  },
+};
+
+export const ActiveState: Story = {
+  args: {
+    trigger: (toggle, ref) => renderTrigger('انتخاب فعال', toggle, ref),
+    children: (
+      <>
+        {renderTitle('مرتب‌سازی')}
+        <Menu.Item
+          onClick={() => {}}
+          active
+        >
+          جدیدترین
+        </Menu.Item>
+        <Menu.Item onClick={() => {}}>قدیمی‌ترین</Menu.Item>
+        <Menu.Item onClick={() => {}}>پرطرفدارترین</Menu.Item>
       </>
     ),
   },

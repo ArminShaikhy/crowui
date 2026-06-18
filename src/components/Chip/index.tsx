@@ -41,46 +41,46 @@ const colorVariants: Record<
   primary: {
     filled:
       'crow:text-primary-500 crow:hover:text-primary-500 crow:border-primary-100 crow:bg-primary-50',
-    base: 'crow:bg-white crow:text-gray-700 crow:hover:text-primary-500 crow:border-gray-200 crow:hover:border-gray-300',
+    base: 'crow:bg-surface crow:text-gray-700 crow:hover:text-primary-500 crow:border-gray-200 crow:hover:border-gray-300',
     active: 'crow:!border-primary-500 crow:!text-primary-500',
   },
   gray: {
     filled: 'crow:text-gray-600 crow:hover:text-gray-600 crow:border-gray-200 crow:bg-gray-50',
-    base: 'crow:bg-white crow:text-gray-700 crow:hover:text-gray-600 crow:border-gray-200 crow:hover:border-gray-300',
+    base: 'crow:bg-surface crow:text-gray-700 crow:hover:text-gray-600 crow:border-gray-200 crow:hover:border-gray-300',
     active: 'crow:!border-gray-500 crow:!text-gray-600',
   },
   success: {
     filled:
       'crow:text-success-600 crow:hover:text-success-600 crow:border-success-100 crow:bg-success-50',
-    base: 'crow:bg-white crow:text-gray-700 crow:hover:text-success-600 crow:border-gray-200 crow:hover:border-success-200',
+    base: 'crow:bg-surface crow:text-gray-700 crow:hover:text-success-600 crow:border-gray-200 crow:hover:border-success-200',
     active: 'crow:!border-success-500 crow:!text-success-600',
   },
   error: {
     filled: 'crow:text-error-500 crow:hover:text-error-500 crow:border-error-100 crow:bg-error-50',
-    base: 'crow:bg-white crow:text-gray-700 crow:hover:text-error-500 crow:border-gray-200 crow:hover:border-error-200',
+    base: 'crow:bg-surface crow:text-gray-700 crow:hover:text-error-500 crow:border-gray-200 crow:hover:border-error-200',
     active: 'crow:!border-error-500 crow:!text-error-500',
   },
   warning: {
     filled:
       'crow:text-warning-700 crow:hover:text-warning-700 crow:border-warning-100 crow:bg-warning-50',
-    base: 'crow:bg-white crow:text-gray-700 crow:hover:text-warning-700 crow:border-gray-200 crow:hover:border-warning-200',
+    base: 'crow:bg-surface crow:text-gray-700 crow:hover:text-warning-700 crow:border-gray-200 crow:hover:border-warning-200',
     active: 'crow:!border-warning-500 crow:!text-warning-700',
   },
   sky: {
     filled: 'crow:text-sky-600 crow:hover:text-sky-600 crow:border-sky-100 crow:bg-sky-50',
-    base: 'crow:bg-white crow:text-gray-700 crow:hover:text-sky-600 crow:border-gray-200 crow:hover:border-sky-200',
+    base: 'crow:bg-surface crow:text-gray-700 crow:hover:text-sky-600 crow:border-gray-200 crow:hover:border-sky-200',
     active: 'crow:!border-sky-500 crow:!text-sky-600',
   },
   violet: {
     filled:
       'crow:text-violet-600 crow:hover:text-violet-600 crow:border-violet-100 crow:bg-violet-50',
-    base: 'crow:bg-white crow:text-gray-700 crow:hover:text-violet-600 crow:border-gray-200 crow:hover:border-violet-200',
+    base: 'crow:bg-surface crow:text-gray-700 crow:hover:text-violet-600 crow:border-gray-200 crow:hover:border-violet-200',
     active: 'crow:!border-violet-500 crow:!text-violet-600',
   },
   flamingo: {
     filled:
       'crow:text-flamingo-600 crow:hover:text-flamingo-600 crow:border-flamingo-100 crow:bg-flamingo-50',
-    base: 'crow:bg-white crow:text-gray-700 crow:hover:text-flamingo-600 crow:border-gray-200 crow:hover:border-flamingo-200',
+    base: 'crow:bg-surface crow:text-gray-700 crow:hover:text-flamingo-600 crow:border-gray-200 crow:hover:border-flamingo-200',
     active: 'crow:!border-flamingo-500 crow:!text-flamingo-600',
   },
 };

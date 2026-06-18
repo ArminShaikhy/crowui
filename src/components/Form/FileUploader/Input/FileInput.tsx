@@ -93,7 +93,7 @@ const FileInput: FC<Props> = (props) => {
   else if (isCompact) sizeClass = DEFAULT_COMPACT_SIZE_CLASS;
 
   const baseClasses = clsx(
-    'crow:relative crow:text-center crow:bg-white crow:transition-all',
+    'crow:relative crow:text-center crow:bg-surface crow:transition-all',
     'crow:border crow:border-gray-300 crow:border-dashed crow:rounded-xl',
     'crow:hover:ring-4 crow:hover:ring-gray-100',
     FOCUS_CLASS,

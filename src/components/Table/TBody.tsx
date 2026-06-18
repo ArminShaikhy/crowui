@@ -20,7 +20,7 @@ interface TBodyProps {
 }
 
 const CELL_CLASS =
-  'crow:p-4 crow:pl-0 crow:bg-white crow:border-b crow:border-solid crow:border-gray-200';
+  'crow:p-4 crow:pl-0 crow:bg-surface crow:border-b crow:border-solid crow:border-gray-200';
 
 function getCellContentByPathIndex<T extends UnknownRecord>(
   dataIndex: ColumnsType<T>['dataIndex'],

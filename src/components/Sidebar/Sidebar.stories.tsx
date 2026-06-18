@@ -73,6 +73,24 @@ const meta = {
       },
       description: 'only available when "hideOnClose" is false or undefined',
     },
+    variant: {
+      control: 'select',
+      options: ['filled', 'bordered', 'ghost'],
+      description: 'Visual style of the sidebar panel',
+      table: { defaultValue: { summary: 'filled' } },
+    },
+    position: {
+      control: 'select',
+      options: ['left', 'right'],
+      description: 'Which edge of the viewport the sidebar is anchored to',
+      table: { defaultValue: { summary: 'right' } },
+    },
+    itemSize: {
+      control: 'select',
+      options: ['compact', 'comfortable'],
+      description: 'Spacing/height density of navigation items',
+      table: { defaultValue: { summary: 'comfortable' } },
+    },
   },
 } satisfies Meta<typeof Sidebar>;
 
@@ -84,8 +102,8 @@ const defaultArgs: SidebarProps = {
   isOpen: true,
   setIsOpen: () => {},
   logo: {
-    open: 'https://dgshahr.com/assets/svg/logotype.svg',
-    close: 'https://dgshahr.com/assets/svg/logo.svg',
+    open: 'https://placehold.co/120x32?text=Logo',
+    close: 'https://placehold.co/32x32?text=L',
     loading: 'eager',
   },
   userProfile: {
@@ -187,4 +205,24 @@ const SidebarHideOnCloseExample: FC<Story['args']> = (props) => {
 export const HideOnClose: Story = {
   args: { ...(defaultArgs as Story['args']), hideOnClose: true },
   render: (args) => <SidebarHideOnCloseExample {...args} />,
+};
+
+export const BorderedVariant: Story = {
+  args: { ...(defaultArgs as Story['args']), variant: 'bordered' },
+  render: (args) => <SidebarExample {...args} />,
+};
+
+export const GhostVariant: Story = {
+  args: { ...(defaultArgs as Story['args']), variant: 'ghost' },
+  render: (args) => <SidebarExample {...args} />,
+};
+
+export const LeftPositioned: Story = {
+  args: { ...(defaultArgs as Story['args']), position: 'left' },
+  render: (args) => <SidebarExample {...args} />,
+};
+
+export const CompactItems: Story = {
+  args: { ...(defaultArgs as Story['args']), itemSize: 'compact' },
+  render: (args) => <SidebarExample {...args} />,
 };

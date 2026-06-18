@@ -257,7 +257,7 @@ const Drawer: FC<DrawerProps> = (props) => {
           aria-modal="true"
           aria-labelledby={header?.title ? titleId : undefined}
           className={clsx(
-            'crow:flex crow:flex-col crow:bg-white crow:divide-y crow:divide-gray-200 crow:divide-solid',
+            'crow:flex crow:flex-col crow:bg-surface crow:divide-y crow:divide-gray-200 crow:divide-solid',
             !havePopover && 'crow:overflow-x-hidden',
             getRadius({ position, padding }),
           )}

@@ -65,7 +65,7 @@ const AccordionItem: FC<PropsWithChildren<AccordionItemProps>> = (props) => {
   const contentId = `${accordionItemKey}-content`;
 
   return (
-    <div className={clsx('crow:bg-white crow:px-4 crow:pt-4', className)}>
+    <div className={clsx('crow:bg-surface crow:px-4 crow:pt-4', className)}>
       <button
         className={clsx(
           'crow:flex crow:justify-between crow:items-center crow:w-full',

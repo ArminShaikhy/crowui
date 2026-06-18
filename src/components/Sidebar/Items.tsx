@@ -13,6 +13,7 @@ import { useSidebarContext } from './context';
 import SidebarSearchInput from './SearchInput';
 import type { FirstLevelSidebarItem, SecondLevelSidebarItem } from './types';
 import { getSecondLevelItemContent, searchItems, showItemsClass } from './utils';
+import { sidebarItemSizeStyle } from './variants';
 import { AccordionGroup, AccordionItem } from '../Accordion';
 import Badge from '../Badge';
 import Divider from '../Divider';
@@ -36,10 +37,11 @@ function findSecondLevelItemWithActiveChild(
 }
 
 const SidebarItems: FC = () => {
-  const { isOpen, searchInput = true, items } = useSidebarContext();
+  const { isOpen, searchInput = true, items, itemSize = 'comfortable' } = useSidebarContext();
   const [search, setSearch] = useState('');
   const [innerItems, setInnerItems] = useState(items ?? []);
   const secondLevelItemWithActiveChild = findSecondLevelItemWithActiveChild(innerItems);
+  const itemSizeClass = sidebarItemSizeStyle[itemSize];
 
   const itemsRef = useRef(items ?? []);
   useEffect(() => {
@@ -102,6 +104,7 @@ const SidebarItems: FC = () => {
                       secondLevelItem.disabled && DISABLED_CLASS,
                       secondLevelItem.active && SECOND_LEVEL_ACTIVE_CLASS,
                       isOpen ? 'crow:pl-9' : 'crow:pl-3',
+                      itemSizeClass.secondLevel,
                       ITEMS_SHARED_CLASS,
                     )}
                   >
@@ -119,6 +122,7 @@ const SidebarItems: FC = () => {
                     titleClassName={clsx(
                       'crow:[&_>div:first-child]:flex-1 crow:[&_>div:first-child]:pl-1',
                       isOpen ? 'crow:px-3' : 'crow:!justify-center',
+                      itemSizeClass.secondLevel,
                       ((secondLevelItemWithActiveChild?.link &&
                         secondLevelItemWithActiveChild?.link === secondLevelItem.link) ||
                         secondLevelItemWithActiveChild?.title === secondLevelItem.title) &&
@@ -131,7 +135,8 @@ const SidebarItems: FC = () => {
                         key={thirdLevelItem.link}
                         href={thirdLevelItem.link}
                         className={clsx(
-                          'crow:flex crow:justify-between crow:h-10 crow:pl-9 crow:pr-11 crow:py-2 crow:mt-1 crow:first:mt-0',
+                          'crow:flex crow:justify-between crow:pl-9 crow:pr-11 crow:mt-1 crow:first:mt-0',
+                          itemSizeClass.thirdLevel,
                           thirdLevelItem.disabled && DISABLED_CLASS,
                           thirdLevelItem.active && ACTIVE_CLASS,
                           ITEMS_SHARED_CLASS,

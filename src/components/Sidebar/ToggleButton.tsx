@@ -5,18 +5,24 @@ import { DURATION_CLASS } from './constants';
 import { useSidebarContext } from './context';
 
 const SidebarToggleButton: FC = () => {
-  const { isOpen, setIsOpen } = useSidebarContext();
+  const { isOpen, setIsOpen, position = 'right' } = useSidebarContext();
+  const isLeft = position === 'left';
+  // Left-anchored sidebars mirror the open/close direction, so the icon rotates inversely.
+  const isRotated = isLeft ? !isOpen : isOpen;
 
   return (
     <button
       type="button"
-      className="crow:absolute crow:top-7 crow:left-0 crow:-translate-x-1/2 crow:p-1 crow:rounded-lg crow:border crow:border-gray-300 crow:bg-white"
+      className={clsx(
+        'crow:absolute crow:top-7 crow:p-1 crow:rounded-lg crow:border crow:border-gray-300 crow:bg-surface',
+        isLeft ? 'crow:right-0 crow:translate-x-1/2' : 'crow:left-0 crow:-translate-x-1/2',
+      )}
       onClick={() => setIsOpen(!isOpen)}
     >
       <IconArrowLeft2
         className={clsx(
           'crow:transition-transform crow:text-primary-500',
-          isOpen && 'crow:rotate-180',
+          isRotated && 'crow:rotate-180',
           DURATION_CLASS,
         )}
         width={16}

@@ -1,6 +1,8 @@
 import type { Preview } from '@storybook/react';
 import React from 'react';
 
+import '@/src/styles.css';
+
 const preview: Preview = {
   parameters: {
     options: {
@@ -17,10 +19,30 @@ const preview: Preview = {
       },
     },
   },
+  globalTypes: {
+    colorMode: {
+      name: 'Theme',
+      description: 'Toggle dark mode',
+      defaultValue: 'light',
+      toolbar: {
+        icon: 'circlehollow',
+        items: [
+          { value: 'light', icon: 'sun', title: 'Light' },
+          { value: 'dark', icon: 'moon', title: 'Dark' },
+        ],
+        showName: true,
+      },
+    },
+  },
   decorators: [
-    (Story) => (
-      <div style={{ direction: 'rtl' }}>
-        <Story />
+    (Story, context) => (
+      <div
+        className={context.globals.colorMode === 'dark' ? 'dark' : ''}
+        style={{ direction: 'rtl' }}
+      >
+        <div className="crow:bg-surface crow:p-4">
+          <Story />
+        </div>
       </div>
     ),
   ],

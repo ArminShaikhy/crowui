@@ -102,6 +102,7 @@ export type {
   RowSelectionProps,
 } from './Table/types';
 export { default as Tabs } from './Tabs';
+export { default as ThemeProvider, useTheme } from './ThemeProvider';
 export { default as Tooltip } from './Tooltip';
 export type { TooltipProps } from './Tooltip';
 export { default as ToastProvider, useToast } from './Toast';

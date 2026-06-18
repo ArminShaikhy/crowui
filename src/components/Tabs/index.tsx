@@ -139,7 +139,7 @@ const Tabs: FC<TabsProps> = (props) => {
               className={clsx(
                 'crow:flex crow:items-center crow:gap-2 crow:px-4 crow:py-2 crow:rounded-lg crow:transition crow:font-p2-medium',
                 {
-                  'crow:bg-white crow:shadow-sm crow:text-primary-600': isActive,
+                  'crow:bg-surface crow:shadow-sm crow:text-primary-600': isActive,
                   'crow:text-gray-500 crow:hover:text-gray-700': !isActive,
                   'crow:cursor-not-allowed crow:opacity-40': tab.disabled,
                   'crow:flex-1 crow:justify-center': fullWidth && fullWidthButtons,
@@ -176,9 +176,9 @@ const Tabs: FC<TabsProps> = (props) => {
                 'crow:flex crow:items-center crow:gap-2 crow:px-4 crow:py-2.5 crow:border crow:border-solid crow:transition crow:font-p2-medium crow:-mb-px',
                 isVertical && 'crow:-mr-px crow:mb-0',
                 {
-                  'crow:bg-white crow:border-gray-200 crow:border-b-white crow:text-primary-600':
+                  'crow:bg-surface crow:border-gray-200 crow:border-b-surface crow:text-primary-600':
                     isActive && !isVertical,
-                  'crow:bg-white crow:border-gray-200 crow:border-r-white crow:text-primary-600':
+                  'crow:bg-surface crow:border-gray-200 crow:border-r-surface crow:text-primary-600':
                     isActive && isVertical,
                   'crow:bg-gray-50 crow:border-transparent crow:text-gray-500 crow:hover:text-gray-700 crow:hover:bg-gray-100':
                     !isActive,

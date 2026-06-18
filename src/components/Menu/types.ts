@@ -15,6 +15,8 @@ export interface MenuProps {
   popoverClassName?: string;
   /** Preferred display position of the dropdown relative to the trigger. @default 'bottom-right' */
   position?: PopperPosition;
+  /** Visual style of the dropdown panel. @default 'default' */
+  panelVariant?: 'default' | 'minimal';
 }
 
 export interface MenuTitleProps {
@@ -37,4 +39,10 @@ export interface MenuItemProps {
   icon?: React.ReactNode;
   /** Trailing element rendered after the label (e.g. keyboard shortcut badge). */
   endElement?: React.ReactNode;
+  /** Color palette applied to the item. @default 'default' */
+  color?: 'default' | 'danger';
+  /** Controls item height and padding. @default 'comfortable' */
+  size?: 'compact' | 'comfortable';
+  /** Marks the item as the current selection; shows a check mark by default. @default false */
+  active?: boolean;
 }

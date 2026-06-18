@@ -10,6 +10,7 @@ import { DURATION_CLASS, POSITION_CLASS_NAMES, REMOVE_CONTAINER_TIMEOUT } from '
 import { MenuContext } from './context';
 import MenuItem from './MenuItem';
 import type { MenuContextType, MenuProps } from './types';
+import { menuPanelStyle } from './variants';
 import type { PopperPosition } from '../Form/Wrappers/PickerWrapper/type';
 
 const MenuComponent: FC<MenuProps> = (props) => {
@@ -19,6 +20,7 @@ const MenuComponent: FC<MenuProps> = (props) => {
     className = '',
     popoverClassName = '',
     position = 'bottom-right',
+    panelVariant = 'default',
   } = props;
   const [isShowMenu, setIsShowMenu] = useState(false);
   const [isMenuInDom, setIsMenuInDom] = useState(false);
@@ -88,7 +90,8 @@ const MenuComponent: FC<MenuProps> = (props) => {
             role="menu"
             aria-hidden={!isShowMenu}
             className={clsx(
-              'crow:absolute crow:z-50 crow:min-w-[256px] crow:px-4 crow:pb-4 crow:rounded-2xl crow:bg-white crow:shadow-lg crow:ring-1 crow:ring-gray-200 crow:focus:outline-none',
+              'crow:absolute crow:z-50 crow:min-w-[256px] crow:px-4 crow:pb-4 crow:rounded-2xl crow:focus:outline-none',
+              menuPanelStyle[panelVariant],
               'crow:transition-all',
               DURATION_CLASS,
               isShowMenu ? 'crow:opacity-100 crow:scale-100' : 'crow:opacity-0 crow:scale-95',
